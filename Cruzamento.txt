@@ -1,0 +1,52 @@
+/* 
+NOME: Guilherme
+DATA: 20/02/20025
+ATIVIDADE: Cruzamento 
+*/ 
+
+#define pinLedVermelhoA 13
+#define pinLedAmareloA 11
+#define pinLedVerdeA 9
+#define pinLedVermelhoB 6
+#define pinLedAmareloB 4
+#define pinLedVerdeB 2
+#define tempoLigadoVermelhoA 5000
+#define tempoLigadoAmareloA 2000
+#define tempoLigadoVerdeA 3000
+#define tempoLigadoVermelhoB 5000 
+#define tempoLigadoAmareloB 2000
+#define tempoLigadoVerdeB 3000
+
+void setup ()
+{
+  pinMode (pinLedVermelhoA, OUTPUT);
+  pinMode (pinLedAmareloA, OUTPUT) ;
+  pinMode (pinLedVerdeA , OUTPUT) ;
+  pinMode (pinLedVermelhoB, OUTPUT) ;
+  pinMode (pinLedAmareloB, OUTPUT) ;
+  pinMode (pinLedVerdeB, OUTPUT) ;
+}
+
+void loop()
+{
+  digitalWrite(pinLedVermelhoB, HIGH) ;
+  digitalWrite(pinLedVerdeA, HIGH) ;
+  delay(tempoLigadoVerdeA);
+  digitalWrite(pinLedVerdeA,LOW);
+  
+  digitalWrite(pinLedAmareloA, HIGH);
+  delay(tempoLigadoAmareloA) ;
+  digitalWrite(pinLedAmareloA, LOW);
+  digitalWrite(pinLedVermelhoB, LOW) ; 
+  
+  
+  digitalWrite(pinLedVermelhoA,HIGH);
+  digitalWrite(pinLedVerdeB,HIGH);
+  delay(tempoLigadoVerdeB) ;
+  digitalWrite(pinLedVerdeB, LOW) ;
+               
+  digitalWrite(pinLedAmareloB,HIGH) ;
+  delay(tempoLigadoAmareloB);
+  digitalWrite(pinLedAmareloB,LOW) ;
+  digitalWrite(pinLedVermelhoA, LOW) ;
+               }
