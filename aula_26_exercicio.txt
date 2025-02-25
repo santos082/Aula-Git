@@ -1,0 +1,106 @@
+/*
+NOME: Guilherme
+DATA: 24/02/2025
+ATIVIDADE: Exercios (calculadora ardoino)
+*/
+
+
+
+ int numeroA =0;
+ int resultado = 0;
+ int valor1 = 2;
+ int valor2 = 5;
+ float resultadoReal = 0;
+
+void setup()
+{
+  //Atividade 1
+  
+  Serial.begin(9600);
+  Serial.println("atividade 1 :");
+  resultado = map(800, 0, 1023, 0, 100);
+  Serial.println(resultado); 
+  
+  resultado = constrain(resultado, 20, 80); //dentro do limite
+  Serial.println(resultado);
+  
+  
+  //Atividade 2 
+  
+  int valor = 0;
+  
+   //INCREMENTO*******
+  Serial.println("Atividade 2, incremento :");
+  valor ++;
+  Serial.println(valor);
+  valor ++;
+  Serial.println(valor);
+  valor ++;
+  Serial.println(valor);
+  valor ++;
+  Serial.println(valor);
+  valor ++;
+  Serial.println(valor);
+  valor ++;
+  Serial.println(valor);
+  valor ++;
+  Serial.println(valor);
+  valor ++;
+  Serial.println(valor);
+  valor ++;
+  Serial.println(valor);
+  valor ++;
+  Serial.println(valor); 
+  //DECREMENTO****
+   Serial.println("Decremento :");
+  Serial.println(valor);  
+  
+  valor --;
+  Serial.println(valor);
+  valor --;
+  Serial.println(valor); 
+  valor --;
+  Serial.println(valor); 
+  valor --;
+  Serial.println(valor); 
+  valor --;
+  Serial.println(valor); 
+  valor --;
+  Serial.println(valor); 
+  valor --;
+  Serial.println(valor); 
+  valor --;
+  Serial.println(valor); 
+  valor --;
+  Serial.println(valor); 
+  valor --;
+  Serial.println(valor);
+  
+  //Atividade 3 
+  
+ 
+  
+  Serial.println("Atividade 3: ");
+  resultado = valor1 + valor2;
+  Serial.print(" A soma dos valores eh: ");
+  Serial.println(resultado);
+  
+ 
+  
+  resultado= valor1 + valor2;
+  resultadoReal = (float)resultado / 2.0;
+  Serial.print("O resultado decimal eh: ");
+  Serial.println(resultadoReal,2);
+  
+  
+  
+  
+  
+  
+}
+
+void loop()
+{
+  
+  
+}
