@@ -1,0 +1,55 @@
+// C++ code
+//
+
+
+ float valorP = 98;
+ float valorA = 1.90;
+ float resultadoReal = 0;
+void setup()
+{
+   Serial.begin  (9600); 
+
+  resultadoReal = valorP / sq(valorA);
+  Serial.println (resultadoReal);
+  
+  
+  
+  
+  if(resultadoReal <18){
+  Serial.print("Muito abaixo do seu peso ");
+  }
+  
+  else if (resultadoReal >= 18.5 && resultadoReal<=24.9){
+  Serial.println("parabens pra voce kk ");
+  }else if (resultadoReal >= 25 && resultadoReal <=29.9){
+  Serial.println("Vai malhar, ta precisando ");
+  }else if (resultadoReal >= 30 && resultadoReal <=34.9){
+  Serial.println("obesidade nivel 2 ");
+  }else if (resultadoReal >= 35 && resultadoReal <=39.9){
+  Serial.println("obesidade ninel 3 ");
+    
+  }else{
+    Serial.println(resultadoReal);
+    }
+     
+    
+    
+    
+    
+    
+  
+  }
+  
+  
+  
+  
+  
+  
+
+
+void loop()
+{
+  
+  
+  
+}
