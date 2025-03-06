@@ -1,0 +1,73 @@
+/* 
+NOME:Guilherme
+DATA:06/03/2025
+ATIVIDADE: Exercicio switch case 
+
+
+
+*/
+
+#define pinLedVermelho 13
+#define pinLedLaranja 12
+#define pinLedAmarelo 11
+#define pinLedVerde 10 
+#define pinLedBranco 4
+#define pinLedAzul 9
+void setup()
+{
+
+ pinMode(pinLedVermelho, OUTPUT);
+ pinMode(pinLedLaranja, OUTPUT);
+ pinMode(pinLedAmarelo, OUTPUT); 
+ pinMode(pinLedVerde, OUTPUT); 
+ pinMode(pinLedBranco, OUTPUT);
+ pinMode(pinLedAzul,OUTPUT); 
+  
+  Serial.begin (9600);
+  int qualidadeAr = 4;
+  
+  
+  switch (qualidadeAr)
+  {
+    case 0:
+    digitalWrite(pinLedVermelho, HIGH);
+     Serial.println("A qualidade do ar esta: Pessimo");
+    break;
+    
+    case 1:
+    digitalWrite(pinLedLaranja,HIGH);
+     Serial.println("A qualidade do ar esta: Ruim");
+    break;
+    
+    case 2:
+    digitalWrite(pinLedAmarelo,HIGH);
+     Serial.println("A qualidade do ar esta: Normal");
+    break;
+    
+    case 3:
+    digitalWrite(pinLedVerde,HIGH);
+     Serial.println(" A qualidade do ar esta: Boa");
+    break;
+    
+    case 4:
+    digitalWrite(pinLedAzul,HIGH);
+     Serial.println(" A qualidade do ar esta: Exelente");
+    break;
+    
+   
+    
+    
+    default:
+    digitalWrite(pinLedBranco,HIGH);
+    Serial.println("ERRO, o progama nao tem capacidade de ler ");
+    break;
+   
+    
+  }
+  
+  
+}
+
+void loop()
+{
+}
