@@ -1,0 +1,69 @@
+/*
+NOME: Guilherme
+DATA: 10/03/25
+ATIVIDADE: Semaforo sem daley 
+*/
+#define pinLedVermelho 10
+#define pinLedAmarelo 9
+#define pinLedVerde 8
+unsigned long tempoInicialVermelho = 5000;
+unsigned long tempoInicialAmarelo = 2000;
+unsigned long tempoInicialVerde = 3000;
+unsigned long tempoInicial = 0;
+
+char faseSemaforo = 0;
+
+
+void setup()
+{
+  pinMode(pinLedVermelho, OUTPUT);
+  pinMode(pinLedAmarelo, OUTPUT);
+  pinMode(pinLedVerde, OUTPUT);
+  
+}
+void loop()
+{
+   unsigned long tempoAtual = millis();
+  
+   if (faseSemaforo == 0)
+  {
+    digitalWrite(pinLedVermelho, HIGH);
+    digitalWrite(pinLedAmarelo, LOW);
+    digitalWrite(pinLedVerde,LOW);
+    if(tempoAtual - tempoInicial >= tempoInicialVermelho)
+    
+  {
+    faseSemaforo = 1;
+    tempoInicial = tempoAtual;
+  
+  }
+}
+else if (faseSemaforo == 1)
+{
+  digitalWrite(pinLedVermelho, LOW);
+  digitalWrite(pinLedAmarelo, LOW);
+  digitalWrite(pinLedVerde, HIGH);
+  if(tempoAtual - tempoInicial >= tempoInicialVerde) 
+  
+  {
+  
+  faseSemaforo = 2;
+  tempoInicial = tempoAtual;
+    
+  }  
+  
+}
+else if (faseSemaforo == 2)
+{
+  digitalWrite(pinLedVermelho, LOW);
+  digitalWrite(pinLedAmarelo, HIGH);
+  digitalWrite(pinLedVerde, LOW);
+  if(tempoAtual - tempoInicial >= tempoInicialAmarelo)
+  {
+    faseSemaforo = 0;
+    tempoInicial = tempoAtual;  
+  }
+ }
+}
+
+
