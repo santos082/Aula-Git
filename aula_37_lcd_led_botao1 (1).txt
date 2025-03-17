@@ -1,0 +1,51 @@
+/* 
+NOME: Guilherme
+DATA: 13/03/2025
+ATIVIDADE: lcd, led/botao 
+
+
+*/
+#include <LiquidCrystal_I2C.h>
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+#define Botao 2
+#define pinLed 13
+
+int estadoAnterior = 1;
+int estadoBotao = 0;
+int estadoLed = 0;
+
+
+
+
+void setup()
+{
+  lcd.init();
+  lcd.backlight();
+  pinMode(pinLed, OUTPUT);
+  pinMode(Botao, INPUT);
+  
+}
+
+void loop()
+{
+ bool estadoAtual = digitalRead(Botao);
+  if (estadoAtual == HIGH && estadoAnterior == LOW)
+  {
+     estadoLed = !estadoLed;
+ 
+    digitalWrite(pinLed, estadoLed);
+  if(estadoLed)
+  {
+    lcd.setCursor(0,0);
+    lcd.print(" Led ligado   ");
+  }                                       
+    else
+    {
+    lcd.setCursor(0,0);
+    lcd.print(" Led desligado ");
+   }
+   } 
+  estadoAnterior = estadoAtual; 
+  
+}
